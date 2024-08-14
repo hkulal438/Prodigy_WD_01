@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive Navigation</title>
+<style>
+body 
+{
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #f0f0f0;
+}
+nav
+{
+position: fixed; 
+top: 
+width: 100%;  
+background: linear-gradient(to right, #4A90E2, #9013FE);  
+transition: background-color 0.3s ease, box-shadow 0.3s ease;  
+z-index: 1000;  
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+}
+nav.scrolled 
+{           
+background-color: #333;  
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);          
+}
+nav ul 
+{
+list-style: none; 
+padding: 0; 
+margin: 0;            
+display: flex;
+justify-content: center;
+}
+nav ul li 
+{
+margin: 0 15px; 
+}
+nav ul li a 
+{
+color: white;  
+text-decoration: none;              
+padding: 15px 20px;              
+display: block;  
+transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;  
+border-radius: 5px;         
+}
+nav ul li a:hover
+{ 
+background-color: rgba(255, 255, 255, 0.3);  
+color: #fff;              
+transform: scale(1.1);  
+}
+nav ul li a.active {
+background-color: #575757; 
+color: #fff;          
+}
+section 
+{
+padding: 60px 20px;  
+margin-top: 80px; 
+text-align: center; 
+min-height:100vh; 
+}
+
+        
+
+#home 
+{ 
+background-color:#e4e4e4;
+}
+#about 
+{ 
+background-color: light pink;
+}
+#services 
+{ 
+background-color: #d4d4d4;
+}
+        
+#contact 
+{ 
+background-color: #c4c4c4;
+}
+
+        
+section h1 
+{
+font-size: 2.5em;              
+margin-bottom: 20px;  
+}
+
+section p 
+{
+font-size: 1.2em;  
+ color: #666;  
+ line-height: 1.6;  
+ max-width: 600px;  
+margin: 0 auto;  
+}
+.content
+{
+padding-top: 70px;
+text-align: center;
+}
+</style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+  
+   
+    <section id="home">
+        <h1>Prodigy Infotech</h1>
+        <p>Prodigy InfoTech is a dynamic company dedicated to innovative technological solutions, and you can learn more about them on their LinkedIn and Instagram.</p>
+    </section>
+    <section id="about">
+        <h1>About Their Internship</h1>
+        <p>Internships are available in a range of fields, including Web Development, Machine Learning, Data Science, and more. Interns will have the chance to work on real-world projects, collaborate with teams, and gain valuable insights into their respective industries..</p>
+    </section>
+    <section id="services">
+        <h1>The tasks in Web development internship</h1>
+        <p>Task 1:Responsive Landing Page</p>
+        <p>Task 2:StopWatch Web Application</p>
+        <p>Task 3:Tic-Tac-Toe WebApplication</p>
+        <p>Task 4:Personal Portfolio Website</p>
+        <p>Task 5:Weather App</p>
+    </section>
+    <section id="contact">
+        <h1>Contact</h1>
+         <p>Location-Madanthyar,Karnataka</p>
+         <p>Email-hkulal438@gmail.com</p>
+         <p>Phone number-91XXXXXXXX</p>
+ </section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const links = document.querySelectorAll('nav ul li a');
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 0) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    links.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
